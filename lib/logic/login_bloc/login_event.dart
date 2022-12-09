@@ -27,8 +27,8 @@ class LoginRegistrationEvent extends LoginEvent {
   LoginRegistrationEvent(this.context);
 }
 
-class LoginSwitchingToRegistration extends LoginEvent {
+class LoginSwitchingToRegistrationEvent extends LoginEvent {
   final bool isRegistration;
 
-  LoginSwitchingToRegistration(this.isRegistration);
+  LoginSwitchingToRegistrationEvent(this.isRegistration);
 }

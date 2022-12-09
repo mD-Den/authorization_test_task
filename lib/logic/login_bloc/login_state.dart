@@ -1,14 +1,14 @@
 part of 'login_bloc.dart';
 
 class LoginState {
-  final String? username;
-  bool get isValidUsername => username!.length < 3;
+  final String username;
+  bool get isValidUsername => username.length < 3;
 
-  final String? password;
-  bool get isValidPassword => password!.length < 6;
+  final String password;
+  bool get isValidPassword => password.length < 6;
 
   final FormSubmissionStatus formStatus;
-  bool isRegistration;
+  final bool isRegistration;
 
   LoginState({
     this.username = '',
