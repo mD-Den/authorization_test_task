@@ -1,3 +1,3 @@
-const String apiUrl = 'https://reqres.in/';
-const String loginAPI = 'users/login';
-const String registerAPI = 'users/register';
+// fake api
+const String loginAPI = 'https://denis.zavrin/api/login';
+const String registerAPI = 'https://denis.zavrin/api/register';

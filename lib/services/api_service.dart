@@ -8,16 +8,14 @@ import 'package:http/http.dart' as http;
 import '../data/models/register_request_model.dart';
 
 class APIService {
-  static var client = http.Client();
+  static Map<String, String> requestHeaders = {
+    'Content-Type': 'application/json; charset=UTF-8',
+  };
 
   static Future<bool> login(LoginRequestModel model) async {
-    Map<String, String> requestHeaders = {
-      'Content-Type': 'application/json',
-    };
+    var url = Uri.parse(loginAPI);
 
-    var url = Uri.http(apiUrl, loginAPI);
-
-    var response = await client.post(url,
+    var response = await http.post(url,
         headers: requestHeaders, body: jsonEncode(model.toJson()));
 
     if (response.statusCode == 200) {
@@ -29,13 +27,9 @@ class APIService {
 
   static Future<RegisterResponseModel> register(
       RegisterRequestModel model) async {
-    Map<String, String> requestHeaders = {
-      'Content-Type': 'application/json',
-    };
+    var url = Uri.parse(registerAPI);
 
-    var url = Uri.http(apiUrl, registerAPI);
-
-    var response = await client.post(url,
+    var response = await http.post(url,
         headers: requestHeaders, body: jsonEncode(model.toJson()));
 
     return registerResponseModel(response.body);

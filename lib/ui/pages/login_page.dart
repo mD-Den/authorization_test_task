@@ -52,6 +52,7 @@ class LoginPage extends StatelessWidget {
         return TextFormField(
           autovalidateMode: AutovalidateMode.onUserInteraction,
           obscureText: false,
+          keyboardType: TextInputType.emailAddress,
           decoration: const InputDecoration(
             icon: Icon(
               Icons.person,
